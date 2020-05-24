@@ -17,43 +17,43 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _PROJECTOR_
-#define _PROJECTOR_
+#ifndef OCTETOS_PROJECTOR_HH
+#define OCTETOS_PROJECTOR_HH
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS
+#include "Panel.hh"
+#include "Projection.hh"
 
-#define PROJECTOR_TYPE_APPLICATION             (projector_get_type ())
-#define PROJECTOR_APPLICATION(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), PROJECTOR_TYPE_APPLICATION, Projector))
-#define PROJECTOR_APPLICATION_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), PROJECTOR_TYPE_APPLICATION, ProjectorClass))
-#define PROJECTOR_IS_APPLICATION(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PROJECTOR_TYPE_APPLICATION))
-#define PROJECTOR_IS_APPLICATION_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), PROJECTOR_TYPE_APPLICATION))
-#define PROJECTOR_APPLICATION_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), PROJECTOR_TYPE_APPLICATION, ProjectorClass))
-
-typedef struct _ProjectorClass ProjectorClass;
-typedef struct _Projector Projector;
-typedef struct _ProjectorPrivate ProjectorPrivate;
-
-struct _ProjectorClass
+namespace octetos
 {
-	GtkApplicationClass parent_class;
+
+class Main
+{
+private:
+	GtkApplication *app;
+  	//int status;
+	int argc;
+	char **argv;
+	int lMonitorCount;
+	int display;
+	int screen;
+	int monitorPanel;
+	int monitorProjection;
+	GdkDisplay *lDisplay;
+	int lScreenCount;
+	GdkScreen* lScreen;
+	Panel* panel;
+	Projection* projection;
+
+public:
+	//void run();
+	Main(int argc,char **argv);
+	~Main();
+	int get_status()const;
+	//static void activate(GtkApplication* app,gpointer user_data);
 };
 
-struct _Projector
-{
-	GtkApplication parent_instance;
-
-	ProjectorPrivate *priv;
-
-};
-
-GType projector_get_type (void) G_GNUC_CONST;
-Projector *projector_new (void);
-
-/* Callbacks */
-
-G_END_DECLS
-
-#endif /* _APPLICATION_H_ */
+}
+#endif
 

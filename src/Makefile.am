@@ -20,9 +20,11 @@ AM_CFLAGS =\
 bin_PROGRAMS = projector
 
 projector_SOURCES = \
-	main.c \
+	main.cc \
 	projector.h \
-	projector.c
+	projector.cc \
+	Panel.cc \
+	Projection.cc
 
 
 projector_LDFLAGS =
