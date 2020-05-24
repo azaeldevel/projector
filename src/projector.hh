@@ -32,7 +32,6 @@ class Main
 {
 private:
 	GtkApplication *app;
-  	//int status;
 	int argc;
 	char **argv;
 	int lMonitorCount;
@@ -47,11 +46,9 @@ private:
 	Projection* projection;
 
 public:
-	//void run();
 	Main(int argc,char **argv);
 	~Main();
 	int get_status()const;
-	//static void activate(GtkApplication* app,gpointer user_data);
 };
 
 }

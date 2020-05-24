@@ -2,6 +2,8 @@
 #define  OCTETOS_PROJECTOR_PANEL_HH
 
 #include <gtk/gtk.h>
+#include <string>
+
 
 namespace octetos
 {
@@ -12,6 +14,7 @@ private:
 	GtkWidget *window;
 	GtkWidget *button;
 	GtkWidget *button_box;
+	std::string strPreviewFile;
 
 public:
 	Panel();

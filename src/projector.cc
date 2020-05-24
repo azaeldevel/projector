@@ -26,7 +26,7 @@ namespace octetos
 
 Main::~Main()
 {
-	//g_object_unref (app);
+	
 }
 
 
@@ -90,11 +90,5 @@ Main::Main(int argc,char **argv)
 	
 }
 
-/*void Main::activate(GtkApplication* app,gpointer user_data)
-{
-	Panel panel(app);
-	
-	gtk_widget_show_all (panel.get_widget());
-}*/
 
 }
