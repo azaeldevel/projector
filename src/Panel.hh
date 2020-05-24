@@ -15,6 +15,12 @@ private:
 	GtkWidget *button;
 	GtkWidget *button_box;
 	std::string strPreviewFile;
+	GtkWidget* views;
+	GtkWidget* subpan;
+	GtkWidget* image;
+	GtkWidget *text;
+	GtkTextBuffer *buffer;
+	GtkWidget *scrolled_window;
 
 public:
 	Panel();
