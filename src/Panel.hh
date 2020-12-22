@@ -21,7 +21,7 @@ private:
 	GtkWidget *text;
 	GtkTextBuffer *buffer;
 	GtkWidget *scrolled_window;
-
+	
 public:
 	Panel();
 	GtkWidget* get_widget()const;
